@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Popper from 'popper.js';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import Ceiling from './components/ceiling'
+import Ceiling from './components/ceiling/ceiling'
 const Home = () => {
    return <div>
        <div className="nav">
