@@ -1,10 +1,8 @@
-import React from 'react'
-import Button from './components/button/button'
-
-const App = ()=>{
-    return <>
-            <Button type="submit" value="Login as customer"/>
-    </>
+import Ceiling from './Components/ceiling'
+const Home = () => {
+   return <div>
+       <div className="nav">
+           <Ceiling/>
+       </div>
+    </div>
 }
-
-export default App;
