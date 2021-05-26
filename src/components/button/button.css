@@ -9,8 +9,11 @@
     font-weight: bold;
     font-size: 30px;
     line-height: 45px;
-    display: flex;
+    display: block;
     align-items: center;
     text-align: center;
     letter-spacing: 0.1em;
+    padding: 10px;
+    width: 600px;
+    text-align: center;
 }

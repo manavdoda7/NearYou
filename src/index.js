@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Popper from 'popper.js';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './App'
+
+
 const Home = () => {
    return <App/>
 }
