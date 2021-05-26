@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom'
 
 // Bootstrap Bundles
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import App from './App'
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+// // import App from 'App'
+// import $ from 'jquery';
+// import Popper from 'popper.js';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-const Carousel = () => {
-    return <h1 className = "h5 mx-3 my-3">Hello World</h1>
+import Ceiling from './Components/ceiling'
+const Home = () => {
+   return <div>
+       <div className="nav">
+           <Ceiling/>
+       </div>
+    </div>
 }
 
-ReactDOM.render(<Carousel/>, document.getElementById('root'));
+ReactDOM.render(<Home/>, document.getElementById('root'));
