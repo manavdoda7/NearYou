@@ -5,10 +5,13 @@ import Auth from './pageRenders/auth'
 
 const App = () => {
 
-   const [pageToRender, setPageToRender] = React.useState(Home);
    const authPageRedirect = () => {
+      console.log('abc')
       setPageToRender(Auth);
    }
+
+   const [pageToRender, setPageToRender] = React.useState(Home(authPageRedirect));
+   
 
    return (
       <React.Fragment>
@@ -17,6 +20,5 @@ const App = () => {
    )
 }
 
-export authPageRedirect
 
 export default App;

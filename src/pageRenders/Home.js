@@ -6,7 +6,7 @@ import Button from '../components/button/button'
 import '../CSS/index.css'
 import React from 'react'
 
-const Home = () => {
+const Home = ({authPageRedirect}) => {
     return (<React.Fragment>
         <div className="ceil">
           <img src={Ceil} alt="" className='ceilsvg'/>
@@ -22,12 +22,12 @@ const Home = () => {
           <div className="reg-tab">
              <h4>Not yet Registered ?</h4>
              <div className="sreg">
-                <button>Register as a Seller or Service Provider Here >></button>
+                <button onClick= {authPageRedirect}>Register as a Seller or Service Provider Here >></button>
              </div>
           </div>
         </section>
-          <div class="row">
-             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 lft">
+          <div className="row">
+             <div className="col-lg-4 col-md-12 mb-4 mb-lg-0 lft">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi beatae quidem id delectus eius repellendus!</p>
                 <img src={lgrass} alt="" />
              </div>

@@ -1,8 +1,8 @@
 import React from 'react'
 import './button.css'
 
-const Button = ({value,type})=>{
-    return <button className="main-btn" type={type}>{value}</button>;
+const Button = ({value,type, oncl})=>{
+    return <button className="main-btn" type={type} onClick={oncl}>{value}</button>;
 }
 
 export default Button;
