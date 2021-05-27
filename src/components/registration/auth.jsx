@@ -1,5 +1,5 @@
 import React from 'react'
-import '../CSS/auth.css'
+import './auth.css'
 
 const Auth = () => {
     return (

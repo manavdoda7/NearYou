@@ -8,9 +8,4 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './App'
 
-
-const Home = () => {
-   return <App/>
-}
-
-ReactDOM.render(<Home/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

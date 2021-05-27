@@ -1,20 +1,12 @@
 import React from 'react'
-import Home from './pageRenders/Home'
+import Home from './components/home/home'
 
 
 const App = () => {
-
-   // const authPageRedirect = () => {
-   //    console.log('abc')
-   //    setPageToRender(Auth);
-   // }
-
-   
-
    return (
-      <React.Fragment>
+      <>
          <Home/>
-      </React.Fragment>
+      </>
    )
 }
 
