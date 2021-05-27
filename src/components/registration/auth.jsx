@@ -57,7 +57,7 @@ const Auth = () => {
           .catch(err=>{
             console.log('here1')
             if(err.response){
-              if(err.response.status == 409){
+              if(err.response.status === 409){
                 setWait(false);
                 window.location.href = '/shop/login'
               }
