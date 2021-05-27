@@ -3,10 +3,18 @@ import Door from '../Assets/svgs/door.svg'
 import lgrass from '../Assets/svgs/grassleft.svg'
 import rgrass from '../Assets/svgs/grassright.svg'
 import Button from '../components/button/button'
+import Auth from './auth'
 import '../CSS/index.css'
 import React from 'react'
 
-const Home = ({authPageRedirect}) => {
+const Home = () => {
+   const [pageToRender, setPageToRender] = React.useState('home');
+
+   const authPageRedirect = () => {
+      setPageToRender('Auth')
+   }
+   
+   if(pageToRender==='home')
     return (<React.Fragment>
         <div className="ceil">
           <img src={Ceil} alt="" className='ceilsvg'/>
@@ -41,6 +49,11 @@ const Home = ({authPageRedirect}) => {
           </div>
           </div>
        </React.Fragment>)
+
+       if(pageToRender==='Auth')
+       {return(
+          <Auth/>
+       )}
 }
 
 export default Home
