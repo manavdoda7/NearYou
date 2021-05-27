@@ -8,6 +8,10 @@ import Button from '../button/button'
 import './home.css'
 
 const Home = () => {
+
+   const redirect = ()=>{
+      window.location.href = '/shop/register';
+   }
    return <React.Fragment>
       <div className="ceil">
          <img src={Ceil} alt="" className='ceilsvg' />
@@ -23,7 +27,7 @@ const Home = () => {
          <div className="reg-tab">
             <h4>Not yet Registered ?</h4>
             <div className="sreg">
-               <button>Register as a Seller or Service Provider Here &gt;&gt;</button>
+               <button onClick={redirect}>Register as a Seller or Service Provider Here &gt;&gt;</button>
             </div>
          </div>
       </section>
