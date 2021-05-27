@@ -62,8 +62,9 @@ const Auth = () => {
                 window.location.href = '/shop/login'
               }
             }else{
-              window.location.reload();
               alert('Please retry at some other time')
+              window.location.reload();
+
             }
         })
 
@@ -93,7 +94,6 @@ const Auth = () => {
                   hfor="shop_type"
                   label="Shop Type"
                   options={[
-                    "",
                     "Daily Needs",
                     "Chemist",
                     "Gift Items",
