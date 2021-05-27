@@ -1,0 +1,27 @@
+.authlabel{
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #D95C47;
+    ;
+}
+.authinput{
+    border: 0;
+    display: block;
+    border-bottom: 3px solid #000;
+    width: 490px;
+    height: 4vh;
+}
+.authinput:focus, .authinput:active{
+    border: 0;
+    border: 3px solid #000;
+    outline: none;
+}
+
+.authinpdiv{
+    padding: 8px;
+}

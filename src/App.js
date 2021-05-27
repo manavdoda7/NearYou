@@ -1,12 +1,13 @@
 import React from 'react'
 import Home from './components/home/home'
+import Auth from './components/registration/auth'
 
 
 const App = () => {
    return (
-      <>
-         <Home/>
-      </>
+      <React.Fragment>
+         <Auth/>
+      </React.Fragment>
    )
 }
 
