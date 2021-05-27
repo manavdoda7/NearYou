@@ -62,6 +62,7 @@ const Auth = () => {
                 window.location.href = '/shop/login'
               }
             }else{
+              window.location.reload();
               alert('Please retry at some other time')
             }
         })
