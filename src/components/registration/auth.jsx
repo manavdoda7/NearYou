@@ -1,30 +1,54 @@
-import React from "react";
+import React,{useState} from "react";
 import "./auth.css";
 import Input from "../input/input";
 import Select from "../select/select";
 
 const Auth = () => {
+  
+  const [inputVals, setInputVals] = useState({
+    shop_name:"",
+    shop_owner_name:"",
+    shop_address:"",
+    shop_type:"",
+    other:"",
+    shop_phone_number:"",
+    shop_pincode:"",
+    shop_password:"",
+  })
+
+  const valueHandler = (name,val)=>{
+    setInputVals({
+      ...inputVals,
+      [name]: val
+    })
+  }
+
+  const registerUser = (e)=>{
+      e.preventDefault();
+      
+  }
+
   return (
     <div className="authBody">
       <article>
         <h1 className="shopregh">Shop Registration</h1>
-        <form className="authform">
+        <form className="authform" onSubmit={registerUser}>
           <div>
             <div className="authflex">
-              <Input hfor="shopName" type="text" label="Shop Name" />
-              <Input hfor="phoneNo" type="tel" label="Phone Number" />
+              <Input hfor="shop_name" type="text" label="Shop Name"  value={inputVals.shop_name} setValue={valueHandler}/>
+              <Input hfor="shop_phone_number" type="tel" label="Phone Number" value={inputVals.shop_phone_number} setValue={valueHandler}/>
             </div>
             <div className="authflex">
-              <Input hfor="ownerName" type="text" label="Owner Name" />
-              <Input hfor="pCode" type="number" label="Pincode" />
+              <Input hfor="shop_owner_name" type="text" label="Owner Name" value={inputVals.shop_owner_name} setValue={valueHandler}/>
+              <Input hfor="shop_pincode" type="number" label="Pincode" value={inputVals.shop_pincode} setValue={valueHandler}/>
             </div>
             <div className="authflex">
-              <Input hfor="sAddress" type="text" label="Shop Address" />
-              <Input hfor="password" type="password" label="Password" />
+              <Input hfor="shop_address" type="text" label="Shop Address" value={inputVals.shop_address} setValue={valueHandler}/>
+              <Input hfor="shop_password" type="password" label="Password" value={inputVals.shop_password} setValue={valueHandler}/>
             </div>
             <div className="authflex">
               <Select
-                hfor="sType"
+                hfor="shop_type"
                 label="Shop Type"
                 options={[
                   "",
@@ -34,15 +58,19 @@ const Auth = () => {
                   "Stationery",
                   "Others",
                 ]}
+                value = {inputVals.shop_type}
+                setValue = {valueHandler}
               />
               <Input
-                hfor="others"
+                hfor="other"
                 type="text"
                 label="If Others(then specify)"
+                value={inputVals.other}
+                setValue={valueHandler}
               />
             </div>
             <div className="authflex">
-              <button className="yelbtn">Register</button>
+              <button className="yelbtn" type="submit">Register</button>
               <button type="button" className="redbtn">
                 Login
               </button>

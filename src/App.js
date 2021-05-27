@@ -1,13 +1,24 @@
 import React from 'react'
 import Home from './components/home/home'
 import Auth from './components/registration/auth'
-
+import {
+   BrowserRouter as Router,
+   Switch,
+   Route,
+   Link
+ } from "react-router-dom";
 
 const App = () => {
    return (
-      <React.Fragment>
+      <Router>
+         <Route exact path='/'> 
+            <Home/>
+         </Route>
+         <Route exact path='/shop/register'>
          <Auth/>
-      </React.Fragment>
+         </Route>
+
+      </Router>
    )
 }
 
