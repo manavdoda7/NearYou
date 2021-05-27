@@ -8,7 +8,7 @@ import Button from '../button/button'
 import './home.css'
 
 const Home = () => {
-   return <>
+   return <React.Fragment>
       <div className="ceil">
          <img src={Ceil} alt="" className='ceilsvg' />
          <Button type="button" value="eShop" />
@@ -41,7 +41,7 @@ const Home = () => {
             <img src={rgrass} alt="" />
          </div>
       </div>
-   </> 
+   </React.Fragment> 
 } 
 
 export default Home

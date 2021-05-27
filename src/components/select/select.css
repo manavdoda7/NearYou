@@ -1,0 +1,33 @@
+.authlabel{
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #D95C47;
+    ;
+}
+.authselect{
+    border: 0;
+    display: block;
+    border-bottom: 3px solid #000;
+    width: 500px;
+    height: 4vh;
+    background: transparent;
+}
+
+.authselect{
+    background: transparent;
+    -webkit-appearance: none;
+}
+.authselect:focus, .authselect:active{
+    /* border: 0; */
+    border: 3px solid #000;
+    outline: none;
+}
+
+.authselectdiv{
+    padding: 8px;
+}
