@@ -2,6 +2,7 @@ import React from 'react'
 import Home from './components/home/home'
 import Auth from './components/registration/auth'
 import Login from './components/login/login'
+import CustHome from './components/custhome/custhome'
 
 import {
    BrowserRouter as Router,
@@ -14,7 +15,7 @@ const App = () => {
    return (
       <Router>
          <Route exact path='/'> 
-            <Home/>
+            <CustHome/>
          </Route>
          <Route exact path='/shop/register'>
          <Auth/>

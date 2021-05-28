@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.aisles {
+  display: flex;
+  margin-left: 8%;
+}
+.servicesAisle,
+.shopAisle {
+  width: 44.5%;
+  align-items: center;
+  background-color: #e4faff;
+  border: 8px solid #000;
+  padding: 2%;
+  border-radius: 15px;
+}
+
+.aisleHeadings {
+  margin-left: 10%;
+  position: relative;
+}
+.aisleHeadings h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.aisleHeadings :nth-child(2) {
+  position: absolute;
+  right: 15%;
+  top: 0;
+}
+
+.card {
+  height: 400px;
+  width: 14%;
+  margin: 2%;
+  background: #d95c47;
+}
+.card img {
+  padding-top: 4%;
+}
+.card p {
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 42px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #fff;
+}
+
+.custgrasses{
+    position: relative;
+}
+.custgrasses :nth-child(2) {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.custgrasses :nth-child(1) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+.cardbottombutton :nth-child(1){
+    width: 80%;
+    margin-left: 10%;
+}
