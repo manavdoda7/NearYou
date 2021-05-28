@@ -16,7 +16,7 @@ const custhome = () => {
     <React.Fragment>
       <div className="ceil">
         <img src={Ceil} alt="" className="ceilsvg" />
-        <Button type="button" value="eShop" />
+        <Button type="button" value="NearYou" />
         <Searchbar/>
       </div>
       <div className="aisleHeadings">

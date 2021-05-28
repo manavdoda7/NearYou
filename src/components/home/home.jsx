@@ -16,7 +16,7 @@ const Home = () => {
       <div className="overhide">
         <div className="ceil">
           <img src={Ceil} alt="" className="ceilsvg" />
-          <Button type="button" value="eShop" />
+          <Button type="button" value="NearYou" />
         </div>
         <section className="logreg">
           <div className="buttonodiv container-fluid">
