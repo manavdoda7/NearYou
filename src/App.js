@@ -17,7 +17,7 @@ const App = () => {
    return (
       <Router>
          <Route exact path='/'> 
-            <CustHome/>
+            <Home/>
          </Route>
          <Route exact path='/shop/register'>
          <Auth/>
