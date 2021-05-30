@@ -10,7 +10,7 @@ import ShopListing from '../shopListing/shopListing.jsx'
 
 
 const custpages = () => {
-    const [showHome, setShowHome] = React.useState(false);
+    const [showHome, setShowHome] = React.useState(true);
   return (
     <React.Fragment>
       <div className="ceil">
@@ -18,7 +18,7 @@ const custpages = () => {
         <Button type="button" value="NearYou" />
         <Searchbar />
       </div>
-      {showHome && <Custhome/>}
+      {showHome && <Custhome onClick={ () => setShowHome(false)}/>}
       {!showHome && <ShopListing/>}
       <div className="custgrasses">
         <img src={lgrass} alt="" />

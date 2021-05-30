@@ -6,7 +6,7 @@ import dnstore from "../../Assets/svgs/dnstore.svg"
 import pharmacies from "../../Assets/svgs/pharmacies.svg"
 import "./custhome.css";
 
-const custhome = () => {
+const custhome = ({onClick}) => {
   return (
     <React.Fragment>
       <div className="aisleHeadings">
@@ -42,7 +42,7 @@ const custhome = () => {
         <section className="shopAisle">
           <div className="outboundary">
             <div className="row">
-              <button className="col-md card">
+              <button type="button" onClick={onClick} className="col-md card">
                   <img src={dnstore} alt="" />
                   <p>Daily Need Stores</p>
               </button>
