@@ -10,7 +10,7 @@ import ShopListing from '../shopListing/shopListing.jsx'
 
 
 const custpages = () => {
-    const [showHome, setShowHome] = React.useState(true);
+    const [showHome, setShowHome] = React.useState(false);
   return (
     <React.Fragment>
       <div className="ceil">
