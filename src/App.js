@@ -3,6 +3,7 @@ import Home from './components/home/home'
 import Auth from './components/registration/auth'
 import Login from './components/login/login'
 import CustHome from './components/custpages/custpages'
+import ShopDashboard from './components/shopdashboard/shopDashboard'
 
 import {
    BrowserRouter as Router,
@@ -22,6 +23,9 @@ const App = () => {
          </Route>
          <Route exact path='/shop/login'>
                <Login />
+         </Route>
+         <Route exact path='/shop/dashboard'>
+               <ShopDashboard/>
          </Route>
 
       </Router>
