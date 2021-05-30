@@ -1,0 +1,42 @@
+.itemListHead{
+    display: block;
+    width: 98%;
+    margin-left: 1%;
+    height: 5vh;
+    border: 3px solid #999;
+    font-size: 1.5rem;
+    background-color: #D95c47;
+    color: #fff;
+    font-family: poppins;
+}
+.itemListHead span{
+    display: inline-block;
+    width: 25%;
+    font-family: poppins;
+    text-align: center;
+}
+
+.itemListing{
+    background: transparent;
+    border: none;
+    width: 98%;
+    margin-left: 1%;
+    font-family: poppins;
+    height: 4vh;
+    border: 3px solid #999;
+    border-bottom: 1px solid #999;
+    /* color: blue; */
+    border-top: none;
+    font-size: 1.1rem;
+}
+
+.itemListing:nth-child(odd){
+    background-color: #fff1be;
+}
+
+.itemListing span{
+    display: inline-block;
+    width: 25%;
+    font-family: poppins;
+    text-align: center;
+}

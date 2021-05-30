@@ -2,7 +2,7 @@ import React from 'react'
 import Home from './components/home/home'
 import Auth from './components/registration/auth'
 import Login from './components/login/login'
-import CustHome from './components/custhome/custhome'
+import CustHome from './components/custpages/custpages'
 import ShopDashboard from './components/shopdashboard/shopDashboard'
 
 import {
