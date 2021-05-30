@@ -43,7 +43,14 @@
   width: 14%;
   margin: 2%;
   background: #d95c47;
+  box-shadow: 5px 5px 0px #ccc;
+  transition: 0.1s linear 0s;
 }
+.card:hover{
+  box-shadow: 3px 3px 0px #ccc;
+  transform: translate(2px, 2px);
+}
+
 .card img {
   padding-top: 4%;
 }
