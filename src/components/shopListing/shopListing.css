@@ -1,42 +1,82 @@
-.itemListHead{
-    display: block;
-    width: 98%;
-    margin-left: 1%;
-    height: 5vh;
-    border: 3px solid #999;
-    font-size: 1.5rem;
-    background-color: #D95c47;
-    color: #fff;
-    font-family: poppins;
-}
-.itemListHead span{
-    display: inline-block;
-    width: 25%;
-    font-family: poppins;
-    text-align: center;
+.shlp {
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  width: 1364px;
+  background: #e4faff;
+  border-radius: 10px;
+  border: 8px solid #000;
+  padding: 30px;
+  filter: drop-shadow(15px 15px 0px rgba(0, 0, 0, 0.25));
 }
 
-.itemListing{
-    background: transparent;
-    border: none;
-    width: 98%;
-    margin-left: 1%;
-    font-family: poppins;
-    height: 4vh;
-    border: 3px solid #999;
-    border-bottom: 1px solid #999;
-    /* color: blue; */
-    border-top: none;
-    font-size: 1.1rem;
+.alignsec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.itemListing:nth-child(odd){
-    background-color: #fff1be;
+.card2 {
+  border: 5px solid #000;
+  display: inline-block;
+  margin: 30px;
+  border-radius: 10px;
+  border-top-left-radius: 20%;
+  padding-top: 30px;
+  width: 250px;
+  height: 205px;
+  background: #ffffff;
+  box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 80px 10px 10px 10px;
 }
 
-.itemListing span{
-    display: inline-block;
-    width: 25%;
-    font-family: poppins;
-    text-align: center;
+.card2 .head {
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.card2 .subhead {
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.btn2 {
+  height: 45px;
+  width: 166px;
+  margin-left: 42px;
+  left: 781px;
+  top: 582px;
+  border-radius: 5px;
+  background: #d95c47;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.shlheadings h1 {
+  position: absolute;
+  width: 100%;
+  margin-top: -80px;
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 75px;
+  letter-spacing: 0em;
+  text-align: center;
 }

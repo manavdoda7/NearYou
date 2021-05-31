@@ -1,33 +1,60 @@
-import React from 'react'
-import './shopListing.css'
+import React from "react";
+import "./shopListing.css";
 
-const arr = [{sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'}, {sname:'John\'s Mart', type: 'Daily Needs', location: 'Model Town', oname:'John Smith'} ];
+const arr = [
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+];
 
-const newArr = arr.map((obj)=>{
-    return (
-        <button className="itemListing">
-            <span className="itemSname">{obj.sname}</span>
-            <span className="itemtype">{obj.type}</span>
-            <span className="itemLocation">{obj.location}</span>
-            <span className="itemOname">{obj.oname}</span>
-        </button>
-    )
-})
+const shopArr = arr.map((obj) => {
+  return (
+    <div className="card2">
+      <h4 className="head">{obj.fname}</h4>
+      <h5 className="subhead">{obj.sname}</h5>
+      <button className="btn2">Shop Here</button>
+    </div>
+  );
+});
+
+
 
 const shopListing = () => {
+    const [showShops, setShowShops] = React.useState(true);
 
-    return (
-        <React.Fragment>
-            <div className="itemListHead">
-            <span className="itemSname">Shop Name</span>
-            <span className="itemtype">Shop Type</span>
-            <span className="itemLocation">Location</span>
-            <span className="itemOname">Owner Name</span>
-            </div>
-            {newArr}
-            <div style={{height:'20vh'}}></div>
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      <div className="shlheadings">
+          <h1>Available Shops</h1>
+      </div>
+      <div className="alignsec">
+        <section className="shlp">{showShops&&shopArr}</section>
+      </div>
+      <div style={{ height: "20vh" }}></div>
+    </React.Fragment>
+  );
+};
 
-export default shopListing
+export default shopListing;
