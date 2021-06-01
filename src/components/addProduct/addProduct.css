@@ -25,28 +25,6 @@
     padding-top: 5vh;
   }
   
-  .redbtn{
-      color: #fff;
-      background: #D95C47;
-      border: 5px solid #000000;
-      box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
-      font-family: 'Poppins', sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 30px;
-      line-height: 45px;
-      display: block;
-      align-items: center;
-      text-align: center;
-      letter-spacing: 0.1em;
-      padding: 10px;
-      width: 300px;
-      text-align: center;
-      margin-left: 20px;
-      margin-top: 10px;
-  }
-  
   .yelbtn{
     background: #FFF1BE;
     border: 5px solid #000000;
@@ -66,7 +44,14 @@
     text-align: center;
     margin-left: 20px;
     margin-top: 10px;
+    transition: 0.2s linear 0s;
   }
+
+  .yelbtn:hover{
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
+    transform: translate(5px, 5px);
+  }
+
   .authflex{
       display: flex;
   }

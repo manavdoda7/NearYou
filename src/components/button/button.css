@@ -16,4 +16,10 @@
     padding: 10px;
     width: 600px;
     text-align: center;
+    transition: 0.2s linear 0s;
 }
+
+.main-btn:hover{
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
+    transform: translate(5px, 5px);
+  }

@@ -7,78 +7,36 @@ const Auth = () => {
   return (
     <div className="authBody">
       <article>
-        <h1 className="shopregh">Shop Registration</h1>
+        <h1 className="shopregh">Add Items</h1>
         <form className="authform">
           <div>
             <div className="authflex">
+              <Input hfor="product_name" type="text" label="Product Name" />
               <Input
-                hfor="shop_name"
+                hfor="brand"
                 type="text"
-                label="Shop Name"
-              />
-              <Input
-                hfor="shop_phone_number"
-                type="tel"
-                label="Phone Number"
+                label="Product Brand"
               />
             </div>
             <div className="authflex">
+              <Input hfor="mrp" type="number" label="M.R.P." />
+              <Input hfor="your_price" type="number" label="Selling Price" />
+            </div>
+            <div className="authflex">
               <Input
-                hfor="shop_owner_name"
-                type="text"
-                label="Owner Name"
-              />
-              <Input
-                hfor="shop_pincode"
+                hfor="additional_charges"
                 type="number"
-                label="Pincode"
-              />
-            </div>
-            <div className="authflex">
-              <Input
-                hfor="shop_address"
-                type="text"
-                label="Shop Address"
+                label="Additional Charges(If Any)"
               />
               <Input
-                hfor="shop_password"
-                type="password"
-                label="Password"
+                hfor="quantity_available"
+                type="number"
+                label="Quantity Available"
               />
             </div>
-            <div className="authflex">
-              <Select
-                hfor="shop_type"
-                label="Shop Type"
-                options={[
-                  "Daily Needs",
-                  "Chemist",
-                  "Gift Items",
-                  "Stationery",
-                  "Others",
-                ]}
-              />
-              <Input
-                hfor="other"
-                type="text"
-                label="If Others(then specify)"
-                notReq={true}
-              />
-            </div>
-            <div className="authflex">
-              <button className="yelbtn" type="submit">
-                Register
-              </button>
-              <button
-                onClick={() => {
-                  window.location.href = "/shop/login";
-                }}
-                type="button"
-                className="redbtn"
-              >
-                Login
-              </button>
-            </div>
+            <button className="yelbtn" type="submit">
+              Add Item
+            </button>
           </div>
         </form>
       </article>
