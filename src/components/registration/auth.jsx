@@ -49,7 +49,7 @@ const Auth = () => {
         shop_password:"",
       })
 
-      axios.post('http://localhost:5000/shops/register',data)
+      axios.post('http://localhost:5000/api/shops/register',data)
         .then(response=>{
             setWait(false);
             window.location.href = '/shop/login'
@@ -59,7 +59,7 @@ const Auth = () => {
             if(err.response){
               if(err.response.status === 409){
                 setWait(false);
-                window.location.href = '/shop/login'
+                window.location.href = '/shop/register'
               }
             }else{
               alert('Please retry at some other time')

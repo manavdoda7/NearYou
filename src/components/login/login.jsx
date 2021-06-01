@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import axios from 'axios'
 import Input from "../input/input";
+
 
 const Login = () => {
     
@@ -17,8 +19,24 @@ const Login = () => {
 
   const submitHandler = (e)=>{
     e.preventDefault();
-    
-    
+    const url = 'http://localhost:5000/api/shops/login';
+    axios.post(url,{
+      shop_phone_number: vals.shop_phone_number,
+      shop_password: vals.shop_password
+    })
+      .then(response=>{
+          setVals({
+            shop_phone_number:"",
+            shop_password:""
+          })
+          console.log(response)
+          // if(response.data){
+
+          // }
+      })
+      .catch(err=>{
+        console.log(err);
+      })
   }
 
   return (
