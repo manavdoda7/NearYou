@@ -1,11 +1,35 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import axios from 'axios'
 import Input from "../input/input";
-import CustHome from '../custhome/custhome'
+// import CustHome from '../custhome/custhome'
+import ShopDashboard from '../shopdashboard/shopDashboard'
+
+const reducer = (state, action) => {
+  if (action.type === 'SET_TOKEN') {
+    // console.log(action.payload)
+    return {
+      ...state,
+      shopAuthToken: action.payload
+    }
+  }
+}
 
 const Login = () => {
-  const [shopAuthToken,setShopAuthToken] = useState("cool");
-  const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+  const [state, dispatch] = useReducer(reducer, {
+    shopAuthToken: 'none',
+  });
+
+  const [shopInfo, setShopInfo] = useState({
+    id: '',
+    shop_name: '',
+    shop_owner_name: '',
+    shop_address: '',
+    shop_type: '',
+    shop_phone_number: '',
+    shop_pincode: ''
+  })
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [vals, setVals] = useState({
     shop_phone_number: "",
@@ -18,6 +42,38 @@ const Login = () => {
       [name]: value
     })
   }
+
+  useEffect(() => {
+    if (state.shopAuthToken !== 'none') {
+      // console.log(state.shopAuthToken);
+      const url = 'http://localhost:5000/api/shops/dashboard';
+      axios.get(url, {
+        headers: {
+          'Authorization': state.shopAuthToken
+        }
+      })
+        .then(response => {
+          if (response.data) {
+            // console.log(response.data);
+            const obj = response.data;
+            setShopInfo({
+              id: obj.id,
+              shop_name: obj.shop_name,
+              shop_owner_name: obj.shop_owner_name,
+              shop_address: obj.shop_address,
+              shop_type: obj.shop_type,
+              shop_phone_number: obj.shop_phone_number,
+              shop_pincode: obj.shop_pincode
+            })
+            setIsLoggedIn(true);
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  }, [state])
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -32,15 +88,7 @@ const Login = () => {
           shop_password: ""
         })
         if (response.data) {
-          let a =response.data.token;
-          // a = a.toString();
-          console.log(a);
-          // setShopAuthToken(a.toString());
-          setShopAuthToken("dflsfdslfhd");
-          // localStorage.setItem('loginStatus',true);
-          console.log(shopAuthToken);
-          loginShop();
-
+          dispatch({ type: 'SET_TOKEN', payload: response.data.token });
         }
       })
       .catch(err => {
@@ -48,24 +96,6 @@ const Login = () => {
       })
   }
 
-  const loginShop = ()=>{
-      const url = 'http://localhost:5000/api/shops/dashboard';
-      console.log(shopAuthToken);
-      axios.get(url,{
-        headers:{
-          'Authorization': shopAuthToken
-        }
-      })
-        .then(response=>{
-          if(response.data){
-            console.log(response.data);
-            setIsLoggedIn(true);
-          }
-        })
-        .catch(err=>{
-          console.log(err)
-        })
-  }
 
   if (!isLoggedIn) {
     return (
@@ -108,8 +138,8 @@ const Login = () => {
         </div>
       </React.Fragment>
     );
-  }else{
-    return <CustHome/>
+  } else {
+    return <ShopDashboard data={shopInfo}/>
   }
 
 };

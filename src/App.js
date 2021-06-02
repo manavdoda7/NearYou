@@ -29,6 +29,9 @@ const App = () => {
          <Route exact path='/shop/dashboard'>
                <Login />
          </Route>
+         <Route exact path='/test'>
+               <CustHome/>
+         </Route>
       </Router>
    )
 }
