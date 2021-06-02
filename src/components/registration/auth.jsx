@@ -114,7 +114,7 @@ const Auth = () => {
               </div>
               <div className="authflex">
                 <button className="yelbtn" type="submit">Register</button>
-                <button onClick={()=>{window.location.href='/shop/login'}} type="button" className="redbtn">
+                <button onClick={()=>{window.location.href='/shop/dashboard'}} type="button" className="redbtn">
                   Login
                 </button>
               </div>

@@ -4,6 +4,7 @@ import Door from "../../Assets/svgs/door.svg";
 import lgrass from "../../Assets/svgs/grassleft.svg";
 import rgrass from "../../Assets/svgs/grassright.svg";
 import Button from "../button/button";
+import axios from 'axios'
 // import Auth from ''
 import "./home.css";
 
@@ -21,7 +22,7 @@ const Home = () => {
         <section className="logreg">
           <div className="buttonodiv container-fluid">
             <div className="login-button">
-              <Button type="submit" value="Login as Customer" />
+              <Button  value="Login as Customer" />
               <Button type="submit" value="Login as Provider" />
             </div>
           </div>

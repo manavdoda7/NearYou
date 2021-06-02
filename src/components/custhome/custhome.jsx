@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Button from "../button/button";
 import electrician from "../../Assets/svgs/electrician.svg"
 import plumber from "../../Assets/svgs/plumber.svg"
 import dnstore from "../../Assets/svgs/dnstore.svg"
 import pharmacies from "../../Assets/svgs/pharmacies.svg"
 import "./custhome.css";
+import axios from 'axios'
+import { RootContext } from '../../App'
 
-const custhome = ({onClick}) => {
+const custhome = ({ onClick }) => {
   return (
     <React.Fragment>
       <div className="aisleHeadings">
@@ -18,12 +20,12 @@ const custhome = ({onClick}) => {
           <div className="outboundary">
             <div className="row">
               <button className="col-md card">
-                  <img src={electrician} alt="" />
-                  <p>Electrician</p>
+                <img src={electrician} alt="" />
+                <p>Electrician</p>
               </button>
               <button className="col-md card">
-              <img src={plumber} alt="" />
-              <p>Plumber</p>
+                <img src={plumber} alt="" />
+                <p>Plumber</p>
               </button>
             </div>
             <div className="row">
@@ -43,12 +45,12 @@ const custhome = ({onClick}) => {
           <div className="outboundary">
             <div className="row">
               <button type="button" onClick={onClick} className="col-md card">
-                  <img src={dnstore} alt="" />
-                  <p>Daily Need Stores</p>
+                <img src={dnstore} alt="" />
+                <p>Daily Need Stores</p>
               </button>
               <button className="col-md card">
-                  <img src={pharmacies} alt="" />
-                  <p>Pharmacies</p>
+                <img src={pharmacies} alt="" />
+                <p>Pharmacies</p>
               </button>
             </div>
             <div className="row">
