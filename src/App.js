@@ -5,7 +5,9 @@ import Login from './components/login/login'
 import CustHome from './components/custpages/custpages'
 import ShopListing from './components/shopListing/shopListing'
 import ShopAddItems from './components/addProduct/addProduct'
-import axios from 'axios'
+import UserRegister from './components/userRegister/userRegister'
+import UserLogin from './components/userLogin/userLogin'
+
 import {
    BrowserRouter as Router,
    Switch,
@@ -29,9 +31,11 @@ const App = () => {
          <Route exact path='/shop/dashboard'>
                <Login />
          </Route>
-         <Route exact path='/test'>
-               <CustHome/>
-         </Route>
+         <Route exact path='/user/register'>
+               <UserRegister/>
+         </Route><Route exact path='/user/login'>
+               <UserLogin/>
+         </Route>         
       </Router>
    )
 }
