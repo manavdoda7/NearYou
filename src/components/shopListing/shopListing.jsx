@@ -11,8 +11,7 @@ const shopListing = ({ arr, value }) => {
       <div className="card2">
         <h4 className="head">{obj.fname}</h4>
         <h5 className="subhead">{obj.sname}</h5>
-        <button className="btn2">{(value==='Items Left' && 'Remove') || (value==='Orders Pending' && 'Approve')}</button>
-        {value==='Orders Pending' && <button className="btn2">Deny</button>}
+        <button className="btn2">{(value==='Items Left' && 'Remove') || (value==='Orders Pending' && 'Approve') || (value==='Available Shops'&&'Shop Here')}</button>
       </div>
     );
   });

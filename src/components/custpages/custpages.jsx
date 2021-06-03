@@ -8,6 +8,35 @@ import Custhome from '../custhome/custhome'
 import ShopListing from '../shopListing/shopListing.jsx'
 
 
+const arr = [
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+  { fname: "John's Mart", sname: "John Smith" },
+];
+
+
 
 const custpages = () => {
     const [showHome, setShowHome] = React.useState(true);
@@ -19,7 +48,7 @@ const custpages = () => {
         <Searchbar />
       </div>
       {showHome && <Custhome onClick={ () => setShowHome(false)}/>}
-      {!showHome && <ShopListing/>}
+      {!showHome && <ShopListing arr = {arr} value = "Available Shops"/>}
       <div className="custgrasses">
         <img src={lgrass} alt="" />
         <img src={rgrass} alt="" />
