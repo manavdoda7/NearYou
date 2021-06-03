@@ -3,6 +3,7 @@ import axios from 'axios'
 import "./auth.css";
 import Input from "../input/input";
 import Select from "../select/select";
+import {url} from "../../backend"
 
 const Auth = () => {
   
@@ -11,7 +12,7 @@ const Auth = () => {
     shop_name:"",
     shop_owner_name:"",
     shop_address:"",
-    shop_type:"",
+    shop_type:"Daily Needs",
     other:"",
     shop_phone_number:"",
     shop_pincode:"",
@@ -35,9 +36,11 @@ const Auth = () => {
         shop_pincode: inputVals.shop_pincode,
         shop_address:inputVals.shop_address,
         shop_phone_number:inputVals.shop_phone_number,
-        shop_type: inputVals.other || inputVals.shop_type
+        shop_type: (inputVals.other==='') ? inputVals.shop_type : inputVals.other 
       }
-
+      console.log(inputVals.other)
+      console.log(inputVals.shop_type)
+      console.table(data);
       setInputVals({
         shop_name:"",
         shop_owner_name:"",
@@ -48,9 +51,9 @@ const Auth = () => {
         shop_pincode:"",
         shop_password:"",
       })
-
-      axios.post('http://localhost:5000/api/shops/register',data)
+      axios.post((url+'/shops/register').toString(),data)
         .then(response=>{
+            console.log(response);
             setWait(false);
             window.location.href = '/shop/login'
           })
@@ -60,14 +63,15 @@ const Auth = () => {
               if(err.response.status === 409){
                 setWait(false);
                 window.location.href = '/shop/register'
+              }else{
+                alert('Please retry at some other time')
+                window.location.reload();
               }
             }else{
               alert('Please retry at some other time')
               window.location.reload();
-
             }
         })
-
   }
 
   if(!wait){
