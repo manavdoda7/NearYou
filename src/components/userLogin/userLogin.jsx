@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import axios from 'axios'
 import Input from "../input/input";
 import CustHome from '../custhome/custhome'
+import {url} from '../../backend'
 
 const reducer = (state, action) => {
   if (action.type === 'SET_TOKEN') {
@@ -13,7 +14,6 @@ const reducer = (state, action) => {
   return state;
 }
 const Login = () => {
-  const url = 'http://localhost:5000';
   const [loggedIn, setLoggedIn] = useState(false);
   const [userCred, setUserCred] = useState({
     use_id:'',
@@ -41,7 +41,7 @@ const Login = () => {
   useEffect(() => {
     if (state.userAuthToken !== 'none' && state.userAuthToken !== undefined) {
       // console.log(state.userAuthToken);
-      axios.get(url + '/api/user/dashboard', {
+      axios.get(url + '/user/dashboard', {
         headers: {
           'Authorization': state.userAuthToken
         }
@@ -69,7 +69,7 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post(url + '/api/user/login', {
+    axios.post(url + '/user/login', {
       user_email: vals.user_email,
       user_password: vals.user_password
     })

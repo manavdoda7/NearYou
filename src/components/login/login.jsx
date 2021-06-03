@@ -3,6 +3,7 @@ import axios from 'axios'
 import Input from "../input/input";
 // import CustHome from '../custhome/custhome'
 import ShopDashboard from '../shopdashboard/shopDashboard'
+import {url} from '../../backend'
 
 const reducer = (state, action) => {
   if (action.type === 'SET_TOKEN') {
@@ -46,8 +47,8 @@ const Login = () => {
   useEffect(() => {
     if (state.shopAuthToken !== 'none') {
       // console.log(state.shopAuthToken);
-      const url = 'http://localhost:5000/api/shops/dashboard';
-      axios.get(url, {
+      const url2 = '/shops/dashboard';
+      axios.get(url+url2, {
         headers: {
           'Authorization': state.shopAuthToken
         }
@@ -77,8 +78,8 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const url = 'http://localhost:5000/api/shops/login';
-    axios.post(url, {
+    const url2 = '/shops/login';
+    axios.post(url+url2, {
       shop_phone_number: vals.shop_phone_number,
       shop_password: vals.shop_password
     })
