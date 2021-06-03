@@ -1,65 +1,59 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .authBody {
-    background: url("../../Assets/svgs/desktop.svg") no-repeat;
-    background-size: 100% 100vh;
-    height: 98vh;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 2vh;
-  }
-  
-  .shopregh {
-    font-family: Poppins;
-    font-size: 45px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 68px;
-    letter-spacing: 0em;
-    text-align: center;
-    padding-top: 5vh;
-  }
-  
-  .yelbtn{
-    background: #FFF1BE;
-    border: 5px solid #000000;
-    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 45px;
-    display: block;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.1em;
-    padding: 10px;
-    width: 300px;
-    text-align: center;
-    margin-left: 20px;
-    margin-top: 10px;
-    transition: 0.2s linear 0s;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .yelbtn:hover{
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
-    transform: translate(5px, 5px);
-  }
+.shopregh {
+  font-family: Poppins;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 68px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding-top: 5vh;
+  margin-top: -80px;
+}
 
-  .authflex{
-      display: flex;
-  }
-  
-  .authform{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-top: 30px;
-  }
-  
+.yelbtn {
+  background: #fff1be;
+  border: 5px solid #000000;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 45px;
+  display: block;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  margin-left: 20px;
+  margin-top: 10px;
+  transition: 0.2s linear 0s;
+}
+
+.yelbtn:hover {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
+  transform: translate(5px, 5px);
+}
+
+.additemform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20vh;
+}
+
+.additemform>div {
+  background-color: #e4faff;
+  border: 8px solid #000;
+  padding: 2%;
+  border-radius: 15px;
+  filter: drop-shadow(15px 15px 0px rgba(0, 0, 0, 0.2));
+}
