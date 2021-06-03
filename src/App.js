@@ -7,6 +7,7 @@ import ShopListing from './components/shopListing/shopListing'
 import ShopAddItems from './components/addProduct/addProduct'
 import UserRegister from './components/userRegister/userRegister'
 import UserLogin from './components/userLogin/userLogin'
+import ShopDashboard from './components/shopdashboard/shopDashboard'
 
 import {
    BrowserRouter as Router,
@@ -33,9 +34,16 @@ const App = () => {
          </Route>
          <Route exact path='/user/register'>
                <UserRegister/>
-         </Route><Route exact path='/user/login'>
+         </Route>
+         <Route exact path='/user/login'>
                <UserLogin/>
-         </Route>         
+         </Route>    
+         <Route exact path = '/user/home'>
+            <CustHome/>   
+         </Route>     
+         <Route exact path='/shop/db'>
+            <ShopDashboard/>
+         </Route>
       </Router>
    )
 }

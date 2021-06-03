@@ -1,0 +1,99 @@
+.ordertable {
+  border: 1px #a39485 solid;
+  margin: 2%;
+  width: 96%;
+  font-size: 0.9em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.ordertable th {
+  text-align: center;
+}
+
+.ordertable thead {
+  font-weight: bold;
+  color: #fff;
+  background: #d95c47;
+}
+
+.ordertable td,
+.ordertable th {
+  padding: 1em 0.5em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.ordertable td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.ordertable a {
+  color: #73685d;
+}
+
+@media all and (max-width: 768px) {
+  .ordertable table,
+  .ordertable thead,
+  .ordertable tbody,
+  .ordertable th,
+  .ordertable td,
+  .ordertable tr {
+    display: block;
+  }
+
+  .ordertable th {
+    text-align: right;
+  }
+
+  .ordertable {
+    position: relative;
+    padding-bottom: 0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .ordertable thead {
+    float: left;
+    white-space: nowrap;
+  }
+
+  .ordertable tbody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .ordertable tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .ordertable th {
+    border-bottom: 1px solid #a39485;
+  }
+
+  .ordertable td {
+    border-bottom: 1px solid #e5e5e5;
+  }
+}
+
+.btn3{
+  height: 45px;
+width: 98px;
+margin-left: 13px;
+border-radius: 5px;
+background: #d95c47;
+color: #fff;
+font-family: Poppins;
+font-size: px;
+font-style: normal;
+font-weight: 700;
+line-height: 38px;
+letter-spacing: 0.1em;
+text-align: center;
+}
