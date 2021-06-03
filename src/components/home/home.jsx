@@ -12,6 +12,12 @@ const Home = () => {
   const redirect = () => {
     window.location.href = "/shop/register";
   };
+  const redirectCustLogin = ()=>{
+    window.location.href = '/user/login'
+  }
+  const redirectProvidLogin = ()=>{
+    window.location.href = '/shop/dashboard'
+  }
   return (
     <React.Fragment>
       <div className="overhide">
@@ -22,8 +28,8 @@ const Home = () => {
         <section className="logreg">
           <div className="buttonodiv container-fluid">
             <div className="login-button">
-              <Button  value="Login as Customer" />
-              <Button type="submit" value="Login as Provider" />
+              <Button  value="Login as Customer" oncl={redirectCustLogin}/>
+              <Button type="submit" value="Login as Provider" oncl={redirectProvidLogin} />
             </div>
           </div>
           <div className="reg-tab">
