@@ -4,6 +4,7 @@ import Input from "../input/input";
 // import CustHome from '../custhome/custhome'
 import ShopDashboard from '../shopdashboard/shopDashboard'
 import {url} from '../../backend'
+import {mainContext} from '../../App'
 
 const reducer = (state, action) => {
   if (action.type === 'SET_TOKEN') {
@@ -20,15 +21,8 @@ const Login = () => {
     shopAuthToken: 'none',
   });
 
-  const [shopInfo, setShopInfo] = useState({
-    id: '',
-    shop_name: '',
-    shop_owner_name: '',
-    shop_address: '',
-    shop_type: '',
-    shop_phone_number: '',
-    shop_pincode: ''
-  })
+
+  const {shopInfo, setShopInfo} = useContext(mainContext);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -55,10 +49,19 @@ const Login = () => {
       })
         .then(response => {
           if (response.data) {
-            // console.log(response.data);
             const obj = response.data;
+            // console.log(response.data);
+              localStorage.setItem('shop', JSON.stringify({
+              shop_id: obj.shop_id,
+              shop_name: obj.shop_name,
+              shop_owner_name: obj.shop_owner_name,
+              shop_address: obj.shop_address,
+              shop_type: obj.shop_type,
+              shop_phone_number: obj.shop_phone_number,
+              shop_pincode: obj.shop_pincode
+              }))
             setShopInfo({
-              id: obj.id,
+              shop_id: obj.shop_id,
               shop_name: obj.shop_name,
               shop_owner_name: obj.shop_owner_name,
               shop_address: obj.shop_address,
@@ -67,6 +70,7 @@ const Login = () => {
               shop_pincode: obj.shop_pincode
             })
             setIsLoggedIn(true);
+            window.location.href = '/shop/dashboard'
           }
         })
         .catch(err => {
@@ -89,6 +93,7 @@ const Login = () => {
           shop_password: ""
         })
         if (response.data) {
+          localStorage.setItem('token', response.data.token);
           dispatch({ type: 'SET_TOKEN', payload: response.data.token });
         }
       })
@@ -98,7 +103,6 @@ const Login = () => {
   }
 
 
-  if (!isLoggedIn) {
     return (
       <React.Fragment>
         <div className="authBody">
@@ -139,9 +143,6 @@ const Login = () => {
         </div>
       </React.Fragment>
     );
-  } else {
-    return <ShopDashboard data={shopInfo}/>
-  }
 
 };
 
