@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import axios from 'axios'
 import Input from "../input/input";
-import CustHome from '../custhome/custhome'
+// import CustHome from '../custhome/custhome'
+import CustHome from '../custpages/custpages'
 import {url} from '../../backend'
+
+import {mainContext} from '../../App'
 
 const reducer = (state, action) => {
   if (action.type === 'SET_TOKEN') {
@@ -15,12 +18,13 @@ const reducer = (state, action) => {
 }
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userCred, setUserCred] = useState({
-    use_id:'',
-    user_email:'',
-    user_pincode: '',
-    user_address:''
-  })
+  // const [userCred, setUserCred] = useState({
+  //   use_id:'',
+  //   user_email:'',
+  //   user_pincode: '',
+  //   user_address:''
+  // })
+  const {userCred, setUserCred} = useContext(mainContext);
 
   const [vals, setVals] = useState({
     user_email: '',
@@ -51,6 +55,7 @@ const Login = () => {
           if(response.data){
             setUserCred({
               ...userCred,
+              user_id:response.data.user_id,
               user_email: response.data.user_email,
               user_name: response.data.user_name,
               user_address: response.data.user_address,
@@ -86,6 +91,11 @@ const Login = () => {
       })
       .catch(err => {
         console.log(err)
+        if(err.response.status === 403){
+          alert('Incorrect username or password')
+        }else{
+          alert('Please retry')
+        }
       })
   }
   if (!loggedIn) {
