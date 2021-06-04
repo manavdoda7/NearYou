@@ -9,7 +9,7 @@ import axios from 'axios'
 import "./home.css";
 
 const Home = () => {
-  let user;
+  const [user, setUser] = React.useState('NearBuy');
   const redirect = () => {
     window.location.href = "/shop/register";
   };
@@ -20,12 +20,11 @@ const Home = () => {
     window.location.href = '/shop/dashboard'
   }
 
+
   useEffect(()=>{
-    user = JSON.parse(localStorage.getItem('user'));
-    if(user){
-      user = user.user_name;
-    }else{
-      user = "NearBuy"
+    let x = JSON.parse(localStorage.getItem('user'));
+    if(x){
+      setUser(x.user_name);
     }
   })
 
