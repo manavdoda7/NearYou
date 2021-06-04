@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Ceil from "../../Assets/svgs/ceiling.svg";
 import lgrass from "../../Assets/svgs/grassleft.svg";
 import rgrass from "../../Assets/svgs/grassright.svg";
@@ -143,11 +143,20 @@ const arr = [
 ];
 
 const ShopDashboard = ({ data }) => {
+  let [shop,setShop] = React.useState('NearBuy');
+
+  useEffect(()=>{
+    let x = JSON.parse(localStorage.getItem('shop'));
+    if(x){
+      setShop(x.shop_name);
+    }
+  })
+
   return (
     <React.Fragment>
       <div className="ceil">
         <img src={Ceil} alt="" className="ceilsvg" />
-        <Button type="button" value={ JSON.parse(localStorage.getItem('shop')).shop_name ||"NearBuy"} />
+        <Button type="button" value={shop} />
       </div>
       <OrderListing arr={ordArr} value="Orders Pending" />
       <section>
