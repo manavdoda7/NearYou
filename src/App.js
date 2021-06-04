@@ -10,7 +10,7 @@ import UserLogin from './components/userLogin/userLogin'
 import ShopDashboard from './components/shopdashboard/shopDashboard'
 
 import {
-   HashRouter as Router,
+   BrowserRouter as Router,
    Switch,
    Route,
    Link
