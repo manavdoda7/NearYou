@@ -21,7 +21,6 @@ const Login = () => {
     shopAuthToken: 'none',
   });
 
-
   const {shopInfo, setShopInfo} = useContext(mainContext);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
