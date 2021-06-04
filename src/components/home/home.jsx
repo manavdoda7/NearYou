@@ -23,7 +23,7 @@ const Home = () => {
       <div className="overhide">
         <div className="ceil">
           <img src={Ceil} alt="" className="ceilsvg" />
-          <Button type="button" value="NearYou" />
+          <Button type="button" value={ JSON.parse(localStorage.getItem('user')).user_name ||"NearBuy"} />
         </div>
         <section className="logreg">
           <div className="buttonodiv container-fluid">

@@ -147,7 +147,7 @@ const ShopDashboard = ({ data }) => {
     <React.Fragment>
       <div className="ceil">
         <img src={Ceil} alt="" className="ceilsvg" />
-        <Button type="button" value="NearYou" />
+        <Button type="button" value={ JSON.parse(localStorage.getItem('shop')).shop_name ||"NearBuy"} />
       </div>
       <OrderListing arr={ordArr} value="Orders Pending" />
       <section>

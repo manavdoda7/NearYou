@@ -39,12 +39,23 @@ const arr = [
 
 
 const custpages = () => {
+
     const [showHome, setShowHome] = React.useState(true);
+
+    /* let user = JSON.parse(localStorage.getItem('user'));
+    const [userCred, setUserCred] = useState({
+       user_id: (user)?user.user_id:'',
+       user_name: (user)?user.user_name:'',
+       user_email: (user)?user.user_email:'',
+       user_pincode: (user)?user.user_pincode:'',
+       user_address: (user)?user.user_address:''
+    }); */
+
   return (
     <React.Fragment>
       <div className="ceil">
         <img src={Ceil} alt="" className="ceilsvg" />
-        <Button type="button" value="NearYou" />
+        <Button type="button" value={ JSON.parse(localStorage.getItem('user')).user_name ||"NearBuy"} />
         <Searchbar />
       </div>
       {showHome && <Custhome onClick={ () => setShowHome(false)}/>}
