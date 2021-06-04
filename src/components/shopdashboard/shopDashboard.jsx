@@ -3,7 +3,7 @@ import Ceil from "../../Assets/svgs/ceiling.svg";
 import lgrass from "../../Assets/svgs/grassleft.svg";
 import rgrass from "../../Assets/svgs/grassright.svg";
 import Button from "../button/button";
-import ShopListing from "../shopListing/shopListing";
+import ProductListing from "../productListing/productListing";
 import AddProduct from "../addProduct/addProduct";
 import OrderListing from "../orderListing/orderListing";
 import {url} from '../../backend'
@@ -162,6 +162,7 @@ const ShopDashboard = ({ data }) => {
        if(response.data){
          let obj = response.data;
          setProducts(response.data);
+         console.log(response.data)
        }
       })
       .catch(err=>{
@@ -178,7 +179,7 @@ const ShopDashboard = ({ data }) => {
       <OrderListing arr={ordArr} value="Orders Pending" />
       <section>
         <div>
-          <ShopListing arr={products} value="Items Left" />
+          <ProductListing arr={products} />
         </div>
         <div>
           <AddProduct/>
