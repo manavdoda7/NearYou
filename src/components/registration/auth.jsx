@@ -99,9 +99,10 @@ const Auth = () => {
                   label="Shop Type"
                   options={[
                     "Daily Needs",
-                    "Chemist",
+                    "Pharmacies",
                     "Gift Items",
                     "Stationery",
+                    "Book Stores",
                     "Others",
                   ]}
                   value = {inputVals.shop_type}
