@@ -22,16 +22,27 @@ import shopListing from './components/shopListing/shopListing'
 export const mainContext = React.createContext(null);
 
 const App = () => {
+   let user = JSON.parse(localStorage.getItem('user'));
    const [userCred, setUserCred] = useState({
-      user_id: '',
-      user_name:'',
-      user_email: '',
-      user_pincode: '',
-      user_address: ''
-   })
+      user_id: (user)?user.user_id:'',
+      user_name: (user)?user.user_name:'',
+      user_email: (user)?user.user_email:'',
+      user_pincode: (user)?user.user_pincode:'',
+      user_address: (user)?user.user_address:''
+   });
 
-   return (
-      <mainContext.Provider value={{userCred, setUserCred}}>
+   let shop = JSON.parse(localStorage.getItem('shop'));
+   const [shopInfo, setShopInfo] = useState({
+      shop_id: (shop)?shop.shop_id:'',
+      shop_name: (shop)?shop.shop_name:'',
+      shop_owner_name: (shop)?shop.shop_owner_name:'',
+      shop_address: (shop)?shop.shop_address:'',
+      shop_type: (shop)?shop.shop_type:'',
+      shop_phone_number: (shop)?shop.shop_phone_number:'',
+      shop_pincode: (shop)?shop.shop_pincode:''
+    })
+
+      return <mainContext.Provider value={{userCred, shopInfo, setShopInfo, setUserCred}}>
          <Router>
             <Route exact path='/'>
                <Home />
@@ -39,7 +50,7 @@ const App = () => {
             <Route exact path='/shop/register'>
                <Auth />
             </Route>
-            <Route exact path='/shop/dashboard'>
+            <Route exact path='/shop/login'>
                <Login />
             </Route>
             <Route exact path='/user/register'>
@@ -49,15 +60,13 @@ const App = () => {
                <UserLogin />
             </Route>
             <Route exact path='/user/home'>
-               <h1>{userCred.user_name}</h1>
                <CustHome />
             </Route>
-            <Route exact path='/shop/db'>
+            <Route exact path='/shop/dashboard'>
                <ShopDashboard />
             </Route>
          </Router>
-      </mainContext.Provider>
-   )
+      </mainContext.Provider>;
 }
 
 
