@@ -67,6 +67,7 @@ const custhome = ({ onClick }) => {
           </div>
         </section>
       </div>
+      <div style={{height:'20vh'}}></div>
     </React.Fragment>
   );
 };
