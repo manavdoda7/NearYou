@@ -157,7 +157,12 @@ const ShopDashboard = ({ data }) => {
   let [products,setProducts] = React.useState([]);
 
   useEffect(()=>{
-      axios.get(url+'/products')
+    let x = JSON.parse(localStorage.getItem('shop'));
+    if(x){
+      const data = {
+          shop_id: x.shop_id
+      }
+      axios.post(url+'/products',data)
       .then((response)=>{
        if(response.data){
          let obj = response.data;
@@ -168,6 +173,7 @@ const ShopDashboard = ({ data }) => {
       .catch(err=>{
         console.log(err);
       })
+    }
   },[])
 
   return (
