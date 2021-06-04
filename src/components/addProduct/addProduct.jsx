@@ -6,7 +6,7 @@ import basket from "../../Assets/imgs/basket.png"
 const Auth = () => {
   return (
     <article>
-      <h1 className="shopregh">Add Items</h1>
+      <h1 className="shopaddh">Add Items</h1>
       <form className="additemform">
         <div style={{display: "flex"}}>
         <div style={{marginLeft: "50px"}}>
