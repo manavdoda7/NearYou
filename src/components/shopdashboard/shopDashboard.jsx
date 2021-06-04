@@ -6,7 +6,9 @@ import Button from "../button/button";
 import ShopListing from "../shopListing/shopListing";
 import AddProduct from "../addProduct/addProduct";
 import OrderListing from "../orderListing/orderListing";
+import {url} from '../../backend'
 import './shopDashboard.css'
+import axios from "axios";
 
 const ordArr = [
   {
@@ -152,6 +154,21 @@ const ShopDashboard = ({ data }) => {
     }
   })
 
+  let [products,setProducts] = React.useState([]);
+
+  useEffect(()=>{
+      axios.get(url+'/products')
+      .then((response)=>{
+       if(response.data){
+         let obj = response.data;
+         setProducts(response.data);
+       }
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+  },[])
+
   return (
     <React.Fragment>
       <div className="ceil">
@@ -161,7 +178,7 @@ const ShopDashboard = ({ data }) => {
       <OrderListing arr={ordArr} value="Orders Pending" />
       <section>
         <div>
-          <ShopListing arr={arr} value="Items Left" />
+          <ShopListing arr={products} value="Items Left" />
         </div>
         <div>
           <AddProduct/>
