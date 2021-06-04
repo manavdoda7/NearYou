@@ -22,7 +22,7 @@ import shopListing from './components/shopListing/shopListing'
 export const mainContext = React.createContext(null);
 
 const App = () => {
-   let user = JSON.parse(localStorage.getItem('user'));
+   let user = JSON.parse(window.localStorage.getItem('user'));
    const [userCred, setUserCred] = useState({
       user_id: (user)?user.user_id:'',
       user_name: (user)?user.user_name:'',

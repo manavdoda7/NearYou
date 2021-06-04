@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Ceil from "../../Assets/svgs/ceiling.svg";
 import Door from "../../Assets/svgs/door.svg";
 import lgrass from "../../Assets/svgs/grassleft.svg";
@@ -9,6 +9,7 @@ import axios from 'axios'
 import "./home.css";
 
 const Home = () => {
+  let user;
   const redirect = () => {
     window.location.href = "/shop/register";
   };
@@ -18,12 +19,22 @@ const Home = () => {
   const redirectProvidLogin = ()=>{
     window.location.href = '/shop/dashboard'
   }
+
+  useEffect(()=>{
+    user = JSON.parse(localStorage.getItem('user'));
+    if(user){
+      user = user.user_name;
+    }else{
+      user = "NearBuy"
+    }
+  })
+
   return (
     <React.Fragment>
       <div className="overhide">
         <div className="ceil">
           <img src={Ceil} alt="" className="ceilsvg" />
-          <Button type="button" value={ JSON.parse(localStorage.getItem('user')).user_name ||"NearBuy"} />
+          <Button type="button" value={user} />
         </div>
         <section className="logreg">
           <div className="buttonodiv container-fluid">
