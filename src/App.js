@@ -42,7 +42,7 @@ const App = () => {
       shop_pincode: (shop) ? shop.shop_pincode : ''
    })
 
-   return <Router>
+   return <Router basename="https://manavdoda7.github.io/NearYou/">
       <mainContext.Provider value={{ userCred, shopInfo, setShopInfo, setUserCred }}>
 
          <Route exact path='/'>
