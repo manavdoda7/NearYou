@@ -23,7 +23,6 @@ const Login = () => {
 
   const {shopInfo, setShopInfo} = useContext(mainContext);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [vals, setVals] = useState({
     shop_phone_number: "",
@@ -68,7 +67,6 @@ const Login = () => {
               shop_phone_number: obj.shop_phone_number,
               shop_pincode: obj.shop_pincode
             })
-            setIsLoggedIn(true);
             window.location.href = '/shop/dashboard'
           }
         })

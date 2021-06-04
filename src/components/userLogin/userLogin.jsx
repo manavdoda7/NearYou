@@ -17,25 +17,9 @@ const reducer = (state, action) => {
   return state;
 };
 
-/* function storeLocalLogin(key) {
-  const [state, setState] = React.useState(
-    () => JSON.parse(localStorage.getItem(key)) || DEFAULTVALUE
-  );
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(state));
-  }, [key, state]);
-  return [state, setState];
-} */
-
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  // const [userCred, setUserCred] = useState({
-  //   use_id:'',
-  //   user_email:'',
-  //   user_pincode: '',
-  //   user_address:''
-  // })
   const { userCred, setUserCred } = useContext(mainContext);
 
   const [vals, setVals] = useState({
@@ -66,7 +50,7 @@ const Login = () => {
         .then((response) => {
           console.log(response);
           if (response.data) {
-            localStorage.setItem(
+            window.localStorage.setItem(
               "user",
               JSON.stringify({
                 user_id: response.data.user_id,
@@ -84,7 +68,7 @@ const Login = () => {
               user_address: response.data.user_address,
               user_pincode: response.data.user_pincode,
             });
-            setLoggedIn(true);
+            window.location.href = '/user/home'
           }
         })
         .catch((err) => {
@@ -108,9 +92,8 @@ const Login = () => {
         });
         if (response.data) {
           // storeLocalLogin(response.data.token);
-          localStorage.setItem("token", response.data.token);
+          window.localStorage.setItem("token", response.data.token);
           dispatch({ type: "SET_TOKEN", payload: response.data.token });
-          window.location.href = '/user/home'
         } else {
           alert("Please try again");
         }
