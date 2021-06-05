@@ -8,6 +8,9 @@ import ShopAddItems from './components/addProduct/addProduct'
 import UserRegister from './components/userRegister/userRegister'
 import UserLogin from './components/userLogin/userLogin'
 import ShopDashboard from './components/shopdashboard/shopDashboard'
+import Cart from './components/Cart/cart'
+   // product_name: , product_brand, shop_name, product_mrp, product_price
+
 
 import {
    BrowserRouter as Router,
@@ -42,8 +45,36 @@ const App = () => {
       shop_pincode: (shop) ? shop.shop_pincode : ''
    })
 
+
+
+   // window.localStorage.setItem("cart",[]);
+
+   // windows.localStorage.setItem("cartItem", (
+   //    JSON.strigify({
+   //       product_id: '',
+   //       product_name: '',
+   //       product_brand: '',
+   //       shop_name:'',
+   //       product_mrp:'',
+   //    })
+   // ))
+
+   let cart = JSON.parse(localStorage.getItem('cart'));
+   const [cartInfo, setCartInfo] = useState(cart||[]);
+
+
+   // let cartItem = JSON.parse(localStorage.getItem('cartItem'));
+   // const [cartItemInfo, setCartItemInfo] = useState({
+   //    product_id: cartItem?cartItem.product_id:'',
+   //    product_name: cartItem?cartItem.product_name:'',
+   //    product_brand: cartItem?cartItem.product_brand:'',
+   //    shop_name:cartItem?cartItem.shop_name:'',
+   //    product_mrp:cartItem?cartItem.product_mrp:'',
+   // });
+
+
    return <Router basename="https://manavdoda7.github.io/NearYou/">
-      <mainContext.Provider value={{ userCred, shopInfo, setShopInfo, setUserCred }}>
+      <mainContext.Provider value={{ userCred, shopInfo, cartInfo, setCartInfo, setShopInfo, setUserCred }}>
 
          <Route exact path='/'>
             <Home />
@@ -66,7 +97,9 @@ const App = () => {
          <Route exact path='/shop/dashboard'>
             <ShopDashboard />
          </Route>
-
+         <Route exact path='/cart'> 
+            <Cart/>
+         </Route>
       </mainContext.Provider>
       </Router>
 }

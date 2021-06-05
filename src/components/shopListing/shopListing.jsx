@@ -5,6 +5,7 @@ import axios from 'axios'
 import {url} from '../../backend'
 
 const shopListing = ({ arr, value, back }) => {
+  const [shopId, setShopId] = React.useState(0);
   console.log(arr);
   const [products,setProducts] = React.useState([]);
 
@@ -16,6 +17,7 @@ const shopListing = ({ arr, value, back }) => {
     .then(response=>{
       // console.log(response.data);
       setProducts(response.data);
+      setShopId(shop_id);
       setShopDashboard(true);
     })
     .catch(err=>{
@@ -71,7 +73,7 @@ const shopListing = ({ arr, value, back }) => {
       
       
     </React.Fragment>)
-    else return <ProductListing arr={products} value="Buy Now"/>
+    else return <ProductListing arr={products} value="Buy Now" shopId={shopId}/>
 };
 
 export default shopListing;
