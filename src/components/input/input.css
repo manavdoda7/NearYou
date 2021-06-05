@@ -7,14 +7,20 @@
     letter-spacing: 0.1em;
     text-align: left;
     color: #D95C47;
-    ;
 }
 .authinput{
     border: 0;
     display: block;
     border-bottom: 3px solid #000;
-    width: 490px;
+    width: 460px;
     height: 4vh;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    background: transparent;
 }
 .authinput:focus, .authinput:active{
     border: 0;

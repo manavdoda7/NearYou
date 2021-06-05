@@ -16,13 +16,14 @@
 
 .shopregh {
   font-family: Poppins;
-  font-size: 45px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: 68px;
   letter-spacing: 0em;
   text-align: center;
-  padding-top: 5vh;
+  padding-top: 7vh;
+  padding-left: -7vw;
 }
 
 .redbtn{
@@ -80,6 +81,6 @@
 .authform{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-46.5%);
     margin-top: 30px;
 }
