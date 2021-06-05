@@ -2,7 +2,7 @@ import React from "react";
 
 // 'Shop Here' 'Grab' 'Remove' 'Approve Deny'
 
-const shopListing = ({ arr}) => {
+const shopListing = ({ arr, value}) => {
 
 
   const shopArr = arr.map((obj) => {
@@ -11,7 +11,7 @@ const shopListing = ({ arr}) => {
         <h5 className="head">{obj.product_brand}</h5>
         <h5 className="head">{obj.product_name}</h5>
         <h5 className="subhead">{obj.product_price}</h5>
-        <button className="btn2">Remove</button>
+        <button className="btn2">{value}</button>
       </div>
     );
   });
@@ -22,7 +22,7 @@ const shopListing = ({ arr}) => {
   return (
     <React.Fragment>
       <div className="shlheadings">
-        <h1>Items Left</h1>
+        <h1>Items Available</h1>
       </div>
       <div className="alignsec">
         <section className="shlp">{showShops && shopArr}</section>

@@ -67,7 +67,7 @@ const App = () => {
             <ShopDashboard />
          </Route>
 
-      </mainContext.Provider>;
+      </mainContext.Provider>
       </Router>
 }
 

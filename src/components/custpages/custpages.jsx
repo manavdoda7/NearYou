@@ -23,6 +23,7 @@ const reducer = (state,action)=>{
 const custpages = () => {
     let [user,setUser] = React.useState("NearBuy");
     let [arr,setArr] = React.useState([]);
+
     let [state, dispatch] = useReducer(reducer,{
       categories:'none'
     })
@@ -41,6 +42,7 @@ const custpages = () => {
           })
           .catch(err=>{
             console.log(err)
+            alert('Something went wrong, please try again');
           })
       }
     },[state])
@@ -60,18 +62,38 @@ const custpages = () => {
     useEffect(()=>{
       let x = JSON.parse(window.localStorage.getItem('user'));
       if(x){
-        console.log('here');
         setUser(x.user_name);
-        console.log(user)
       }
     })
+  
+    //For searching queries
+  const [searchProduct,setSearchProduct] = React.useState('');
+  const searchChangeHandler = (val)=>{
+      setSearchProduct(val);
+  }
+  const searchSubmitHandler = (e)=>{
+    e.preventDefault();
+      const data = {
+        product_name: searchProduct
+      }
+      setSearchProduct('');
+      axios.post(url+'/products/search',data)
+      .then((response)=>{
+          setArr(response.data)
+          setShowHome(false);
+      })
+      .catch((err)=>{
+        console.log(err);
+        alert('An error occured please retry')
+      })
+  }
 
   return (
     <React.Fragment>
       <div className="ceil">
         <img src={Ceil} alt="" className="ceilsvg" />
         <Button type="button" value={user} />
-        <Searchbar />
+        <Searchbar value = {searchProduct} searchChangeHandler={searchChangeHandler} searchSubmitHandler={searchSubmitHandler}/>
       </div>
       {showHome && <Custhome onClick={onClick}/>}
       {!showHome && <ShopListing arr = {arr} value = "Available Shops" back={back}/>}

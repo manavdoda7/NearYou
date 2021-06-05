@@ -60,8 +60,8 @@ const Auth = () => {
         <div style={{marginLeft: "50px"}}>
           <Input hfor="product_name" type="text" label="Product Name" setValue={setValue} value={inputVals.product_name}/>
           <Input hfor="product_brand" type="text" label="Product Brand" setValue={setValue} value={inputVals.product_brand}/>
-          <Input hfor="product_price" type="text" label="Selling Price" setValue={setValue} value={inputVals.product_price}/>
-          <Input hfor="product_mrp" type="text" label="MRP" setValue={setValue} value={inputVals.product_mrp}/>
+          <Input hfor="product_price" type="number" label="Selling Price" setValue={setValue} value={inputVals.product_price}/>
+          <Input hfor="product_mrp" type="number" label="MRP" setValue={setValue} value={inputVals.product_mrp}/>
           <button className="yelbtn" type="submit">Add Item</button>
         </div>
         <div>
