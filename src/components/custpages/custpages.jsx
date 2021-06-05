@@ -6,41 +6,44 @@ import Searchbar from "../searchBar/searchbar";
 import Button from "../button/button";
 import Custhome from '../custhome/custhome'
 import ShopListing from '../shopListing/shopListing.jsx'
-
-
-const arr = [
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-  { fname: "John's Mart", sname: "John Smith" },
-];
-
-
+import {url} from '../../backend' 
+import axios from 'axios'
 
 const custpages = () => {
     let [user,setUser] = React.useState("NearBuy");
+    let [arr,setArr] = React.useState([]);
+    let [categories, setCategories] = React.useState("none")
+    
+    useEffect(()=>{
+      if(categories !== 'none'){
+        const data = {
+          shop_type:categories
+        }
+        console.log(data)
+        axios.post(url+'/shops/getShops', data)
+          .then(response=>{
+            console.log(response)
+            setArr(response.data);
+            setShowHome(false)
+          })
+          .catch(err=>{
+            console.log(err)
+          })
+      }
+    },[categories])
+
+    const onClick = (category)=>{
+      console.log('clicked',category)
+      setCategories(category);
+    }
+
     const [showHome, setShowHome] = React.useState(true);
+
+    const back = ()=>{
+      // console.log('Back button');
+      setShowHome(true);
+    }
+
     useEffect(()=>{
       let x = JSON.parse(window.localStorage.getItem('user'));
       if(x){
@@ -57,8 +60,8 @@ const custpages = () => {
         <Button type="button" value={user} />
         <Searchbar />
       </div>
-      {showHome && <Custhome onClick={ () => setShowHome(false)}/>}
-      {!showHome && <ShopListing arr = {arr} value = "Available Shops"/>}
+      {showHome && <Custhome onClick={onClick}/>}
+      {!showHome && <ShopListing arr = {arr} value = "Available Shops" back={back}/>}
       <div className="custgrasses">
         <img src={lgrass} alt="" />
         <img src={rgrass} alt="" />

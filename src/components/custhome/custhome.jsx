@@ -44,11 +44,11 @@ const custhome = ({ onClick }) => {
         <section className="shopAisle">
           <div className="outboundary">
             <div className="row">
-              <button type="button" onClick={onClick} className="col-md card">
+              <button type="button" onClick={()=>{onClick("Daily Needs")}} className="col-md card">
                 <img src={dnstore} alt="" />
                 <p>Daily Need Stores</p>
               </button>
-              <button className="col-md card">
+              <button className="col-md card" onClick={()=>{onClick("Pharmacies")}}>
                 <img src={pharmacies} alt="" />
                 <p>Pharmacies</p>
               </button>
