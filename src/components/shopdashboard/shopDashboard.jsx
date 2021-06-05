@@ -185,7 +185,7 @@ const ShopDashboard = ({ data }) => {
       <OrderListing arr={ordArr} value="Orders Pending" />
       <section>
         <div>
-          <ProductListing arr={products} />
+          <ProductListing arr={products} value='Remove' />
         </div>
         <div>
           <AddProduct/>
