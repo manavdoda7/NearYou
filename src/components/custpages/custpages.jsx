@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useReducer } from "react";
 import Ceil from "../../Assets/svgs/ceiling.svg";
 import lgrass from "../../Assets/svgs/grassleft.svg";
 import rgrass from "../../Assets/svgs/grassright.svg";
@@ -9,15 +9,28 @@ import ShopListing from '../shopListing/shopListing.jsx'
 import {url} from '../../backend' 
 import axios from 'axios'
 
+const reducer = (state,action)=>{
+  if(action.type === 'SET_CATEGORY'){
+      // console.log(action.payload)
+      return {
+        ...state,
+        categories: action.payload
+      }
+  }
+  return state;
+}
+
 const custpages = () => {
     let [user,setUser] = React.useState("NearBuy");
     let [arr,setArr] = React.useState([]);
-    let [categories, setCategories] = React.useState("none")
+    let [state, dispatch] = useReducer(reducer,{
+      categories:'none'
+    })
     
     useEffect(()=>{
-      if(categories !== 'none'){
+      if(state.categories !== 'none'){
         const data = {
-          shop_type:categories
+          shop_type:state.categories
         }
         console.log(data)
         axios.post(url+'/shops/getShops', data)
@@ -30,11 +43,11 @@ const custpages = () => {
             console.log(err)
           })
       }
-    },[categories])
+    },[state])
 
     const onClick = (category)=>{
       console.log('clicked',category)
-      setCategories(category);
+      dispatch({type:'SET_CATEGORY',payload:category})
     }
 
     const [showHome, setShowHome] = React.useState(true);
