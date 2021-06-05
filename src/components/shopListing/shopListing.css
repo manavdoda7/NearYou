@@ -76,4 +76,12 @@
   line-height: 75px;
   letter-spacing: 0em;
   text-align: center;
+  z-index: -1;
+}
+
+.back-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
