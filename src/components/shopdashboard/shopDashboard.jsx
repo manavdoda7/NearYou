@@ -3,7 +3,7 @@ import Ceil from "../../Assets/svgs/ceiling.svg";
 import lgrass from "../../Assets/svgs/grassleft.svg";
 import rgrass from "../../Assets/svgs/grassright.svg";
 import Button from "../button/button";
-import ProductListing from "../productListing/productListing";
+import PrivateProductListing from '../privateProductListing/privateProductListing'
 import AddProduct from "../addProduct/addProduct";
 import OrderListing from "../orderListing/orderListing";
 import {url} from '../../backend'
@@ -131,23 +131,19 @@ const ordArr = [
     amount: "100Rs",
   },
 ];
-const arr = [
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-  { fname: "Grapes", sname: "50.00 /KG" },
-];
+
 
 const ShopDashboard = ({ data }) => {
   let [shop,setShop] = React.useState('NearBuy');
-
   useEffect(()=>{
+    axios.get(url+'/shops/dashboard',{
+      headers: {
+       authorization:localStorage.getItem('token')
+      }
+    })
+    .catch((err)=>{
+        window.location.href = '/shop/login';
+    })
     let x = JSON.parse(localStorage.getItem('shop'));
     if(x){
       setShop(x.shop_name);
@@ -165,7 +161,6 @@ const ShopDashboard = ({ data }) => {
       axios.post(url+'/products',data)
       .then((response)=>{
        if(response.data){
-         let obj = response.data;
          setProducts(response.data);
          console.log(response.data)
        }
@@ -175,6 +170,19 @@ const ShopDashboard = ({ data }) => {
       })
     }
   },[])
+  
+  const removeProduct = (product_id)=>{
+    setProducts((prevState)=>{
+      return prevState.filter(obj=> obj.product_id !== product_id)
+    })
+    const data = {
+      product_id
+    }
+    axios.post(url+'/products/delete',data)
+    .catch(err=>{
+      alert('Please refresh and try to delete again')
+    })
+  }
 
   return (
     <React.Fragment>
@@ -185,7 +193,7 @@ const ShopDashboard = ({ data }) => {
       <OrderListing arr={ordArr} value="Orders Pending" />
       <section>
         <div>
-          <ProductListing arr={products} value='Remove' />
+          <PrivateProductListing arr={products} value='Remove' removeProduct={removeProduct}/>
         </div>
         <div>
           <AddProduct/>

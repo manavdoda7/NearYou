@@ -1,14 +1,27 @@
 import React from "react";
 import "./shopListing.css";
 import ProductListing from '../productListing/productListing'
-
+import axios from 'axios'
+import {url} from '../../backend'
 
 const shopListing = ({ arr, value, back }) => {
   console.log(arr);
-  
-  const shopHandler = () => {
-    console.log("Button Triggered")
-    setShopDashboard(true);
+  const [products,setProducts] = React.useState([]);
+
+  const shopHandler = (shop_id) => {
+    let data = {
+      shop_id
+    }
+    axios.post(url+'/products',data)
+    .then(response=>{
+      // console.log(response.data);
+      setProducts(response.data);
+      setShopDashboard(true);
+    })
+    .catch(err=>{
+      console.log(err);
+      alert('There was an error please retry')
+    })
   }
 
   const shopArr = arr.map((obj) => {
@@ -18,7 +31,7 @@ const shopListing = ({ arr, value, back }) => {
         <div className="card2" key={obj.shop_id}>
           <h4 className="head">{obj.shop_name}</h4>
           <h5 className="subhead">{obj.shop_owner_name}</h5>
-          <button className="btn2" onClick={shopHandler}>
+          <button className="btn2" onClick={()=>shopHandler(obj.shop_id)}>
             Shop Here
           </button>
         </div>
@@ -28,7 +41,7 @@ const shopListing = ({ arr, value, back }) => {
           <div className="card2" key={obj.shop_id}>
           <h4 className="head">{obj.shop_name}</h4>
           <h5 className="subhead">{obj.shop_type}</h5>
-          <button className="btn2" onClick={shopHandler}>
+          <button className="btn2" onClick={()=>shopHandler(obj.shop_id)}>
             Shop Here
           </button>
         </div>
@@ -58,7 +71,7 @@ const shopListing = ({ arr, value, back }) => {
       
       
     </React.Fragment>)
-    else return <ProductListing arr={[]}/>
+    else return <ProductListing arr={products} value="Buy Now"/>
 };
 
 export default shopListing;
