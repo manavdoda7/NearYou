@@ -37,7 +37,7 @@ const custhome = ({ onClick }) => {
               <button className="col-md card"></button>
             </div>
             <div className="cardbottombutton">
-              <Button value="To Services" type="button" />
+              <Button value="Services" type="button" />
             </div>
           </div>
         </section>
@@ -54,15 +54,27 @@ const custhome = ({ onClick }) => {
               </button>
             </div>
             <div className="row">
-              <button className="col-md card"></button>
-              <button className="col-md card"></button>
+              <button className="col-md card" onClick={()=>{onClick("Gift Items")}}>
+              {/* <img src={giftItems} alt="" /> */}
+                <p>Gift Items</p>
+              </button>
+              <button className="col-md card" onClick={()=>{onClick("Stationery")}}>
+              {/* <img src={stationery} alt="" /> */}
+                <p>Stationery</p>
+              </button>
             </div>
             <div className="row">
-              <button className="col-md card"></button>
-              <button className="col-md card"></button>
+              <button className="col-md card" onClick={()=>{onClick("Book Stores")}}>
+              {/* <img src={bookStores} alt="" /> */}
+                <p>Book Stores</p>
+              </button>
+              <button className="col-md card" onClick={()=>{onClick("Others")}}>
+              {/* <img src={otherShops} alt="" /> */}
+                <p>Others</p>
+              </button>
             </div>
             <div className="cardbottombutton">
-              <Button value="To Shops" type="button" />
+              <Button value="Shops" type="button" />
             </div>
           </div>
         </section>
