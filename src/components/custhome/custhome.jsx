@@ -14,7 +14,7 @@ import bookStores from "../../Assets/svgs/bookStore.svg"
 import otherShops from "../../Assets/svgs/otherShops.svg"
 import "./custhome.css";
 import axios from 'axios'
-import { RootContext } from '../../App'
+
 
 const custhome = ({ onClick }) => {
   return (
