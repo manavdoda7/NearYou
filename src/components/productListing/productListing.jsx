@@ -5,7 +5,15 @@ const shopListing = ({ arr, value, shopId}) => {
 
   const addToCart = (obj) => {
     // console.log(shopId)
-    let x = {shop_id:shopId, product:{...obj, quantity:1}};
+    let x = {
+      shop_id:shopId,
+      product_id: obj.product_id,
+      product_name: obj.product_name,
+      product_brand: obj.product_brand,
+      quantity: 1,
+      product_price: obj.product_price
+    };
+    
     let cart = JSON.parse(localStorage.getItem('cart'));
     if(cart===null) cart=[];
     cart.push(x);
