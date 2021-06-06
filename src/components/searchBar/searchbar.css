@@ -1,6 +1,6 @@
 .searchForm {
   position: absolute;
-  top: 2vh;
+  top: 5vh;
   right: 5%;
   width: 40%;
   /* transform: scaleY(1.5); */
@@ -8,16 +8,16 @@
 
 .searchForm input {
   width: 100%;
-  height: 80px;
+  height: 65px;
   background: #fffff3;
   border: 5px solid #000000;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   font-family: Poppins;
-  font-size: 25px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 45px;
-  letter-spacing: 0em;
-  padding-left: 2%;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+  padding-left: 4%;
 }

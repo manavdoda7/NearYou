@@ -26,8 +26,9 @@ body {
   font-style: normal;
   font-weight: 900;
   font-size: 55px;
-  line-height: 60px;
+  line-height: 55px;
   color: #000000;
+  border: 8px #000000 solid;
 }
 .logreg button {
   z-index: 5;
