@@ -54,8 +54,7 @@ const Home = () => {
         <div className="row">
           <div className="col-lg-4 col-md-12 mb-4 mb-lg-0 lft">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              beatae quidem id delectus eius repellendus!
+             Near Buy is  A one step solutions to your  daily necessities. Are you a service provider?  Make
             </p>
             <img src={lgrass} alt="" />
           </div>
@@ -65,8 +64,7 @@ const Home = () => {
           </div>
           <div className="col-lg-4 col-md-12 mb-4 mb-lg-0 ryt">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis eligendi id libero reiciendis eum cum!
+               a name for yourself in your city and take your business to a whole new level. Register now.
             </p>
             <img src={rgrass} alt="" />
           </div>
