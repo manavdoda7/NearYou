@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const shopListing = ({ arr, value, shopId}) => {
+const shopListing = ({ arr, value, shopId, back}) => {
 
   const addToCart = (obj) => {
     // console.log(shopId)
@@ -45,6 +45,12 @@ const shopListing = ({ arr, value, shopId}) => {
         <section className="shlp">{showShops && shopArr}</section>
       </div>
       <div style={{ height: "20vh" }}></div>
+      <div className="back-btn">
+      <button className="main-btn" onClick={back} style={{width:'300px'}}>
+        Back
+      </button>
+      <button className="main-btn" onClick={()=>window.location.href='/cart'} style={{width:'300px'}}>Veiw Cart</button>
+      </div>
     </React.Fragment>
   );
 };

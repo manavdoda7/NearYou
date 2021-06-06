@@ -52,6 +52,9 @@ const shopListing = ({ arr, value, back }) => {
   });
 
   const [shopDashboard, setShopDashboard] = React.useState(false);
+  const back2 = () =>{
+    setShopDashboard(false);
+  }
 
     if(!shopDashboard) return (<React.Fragment>
       
@@ -73,7 +76,7 @@ const shopListing = ({ arr, value, back }) => {
       
       
     </React.Fragment>)
-    else return <ProductListing arr={products} value="Buy Now" shopId={shopId}/>
+    else return <ProductListing arr={products} value="Buy Now" shopId={shopId} back={back2} />
 };
 
 export default shopListing;
