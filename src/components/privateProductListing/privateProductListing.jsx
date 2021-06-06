@@ -1,26 +1,9 @@
 import React from "react";
 
+// 'Shop Here' 'Grab' 'Remove' 'Approve Deny'
 
-const shopListing = ({ arr, value, shopId}) => {
+const shopListing = ({ arr, value, removeProduct}) => {
 
-  const addToCart = (obj) => {
-    // console.log(shopId)
-    let x = {
-      shop_id:shopId,
-      product_id: obj.product_id,
-      product_name: obj.product_name,
-      product_brand: obj.product_brand,
-      quantity: 1,
-      product_price: obj.product_price
-    };
-    
-    let cart = JSON.parse(localStorage.getItem('cart'));
-    if(cart===null) cart=[];
-    cart.push(x);
-    console.log(cart);
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-  }
 
   const shopArr = arr.map((obj) => {
     return (
@@ -28,7 +11,7 @@ const shopListing = ({ arr, value, shopId}) => {
         <h5 className="head">{obj.product_brand}</h5>
         <h5 className="head">{obj.product_name}</h5>
         <h5 className="subhead">{obj.product_price}</h5>
-        <button className="btn2" onClick={()=>addToCart(obj)}>{value}</button>
+        <button className="btn2" onClick={()=>{removeProduct(obj.product_id)}}>{value}</button>
       </div>
     );
   });

@@ -43,6 +43,7 @@ const Auth = () => {
               product_price:'',
               product_mrp:''
             })
+            window.location.reload();
         })
         .catch(err=>{
           console.log(err)
